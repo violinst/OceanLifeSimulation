@@ -1,4 +1,4 @@
-package nl.violinist.oceansimulation._main;
+package nl.violinist.oceanlifesimulation._main;
 
 public class Main {
 

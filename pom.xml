@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>nl.violinist.oceansimulator</groupId>
-    <artifactId>OceanSimulation</artifactId>
+    <artifactId>OceanLifeSimulation</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <properties>
