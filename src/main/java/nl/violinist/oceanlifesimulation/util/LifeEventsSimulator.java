@@ -7,7 +7,7 @@ public class LifeEventsSimulator {
     public void startSimulation (SeaTurtle seaTurtle) {
 
         while (checkStatus(seaTurtle)) {
-            int simulationNumber = (int) Math.random() * 100;
+            int simulationNumber = (int) (Math.random() * 100);
             if (simulationNumber >= 0 && simulationNumber < 20) {
                 sleepSimulation(seaTurtle);
             } else if (simulationNumber >= 20 && simulationNumber < 30) {
@@ -191,7 +191,7 @@ public class LifeEventsSimulator {
     }
 
     private boolean checkStatus(SeaTurtle seaTurtle) {
-        System.out.println("hp: " + seaTurtle.getHealth() + "stamina: " + seaTurtle.getStamina());
+        System.out.println("hp: " + seaTurtle.getHealth() + " stamina: " + seaTurtle.getStamina());
         if (seaTurtle.getHealth() <= 0) {
             return false;
         } else {
