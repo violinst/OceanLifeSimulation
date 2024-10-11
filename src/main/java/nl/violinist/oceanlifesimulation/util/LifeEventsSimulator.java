@@ -112,6 +112,19 @@ public class LifeEventsSimulator {
         System.out.println("Sea Turtle was attacked by a shark. She lost 20 health points.");
     }
 
+    private void findingOceanStream (SeaTurtle seaTurtle) {
+        int stamina = seaTurtle.getStamina();
+        stamina = stamina + 5;
+        if (stamina > 100) {
+            stamina = 100;
+        }
+
+        seaTurtle.setStamina(stamina);
+        checkStamina(seaTurtle);
+        System.out.println("Sea Turtle found an ocean stream to swim with! She gained 5 stamina points.");
+    }
+
+
 
 
 
