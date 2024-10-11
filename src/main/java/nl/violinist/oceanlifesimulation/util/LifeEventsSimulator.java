@@ -5,7 +5,32 @@ import nl.violinist.oceanlifesimulation.entity.SeaTurtle;
 public class LifeEventsSimulator {
 
     public void startSimulation (SeaTurtle seaTurtle) {
-
+        Math.random();
+        while (checkStatus(seaTurtle)) {
+            int simulationNumber = (int) Math.random() * 100;
+            if (simulationNumber >= 0 && simulationNumber < 20) {
+                sleepSimulation(seaTurtle);
+            } else if (simulationNumber >= 20 && simulationNumber < 30) {
+                swimSimulation(seaTurtle);
+            } else if (simulationNumber >= 30 && simulationNumber < 40) {
+                eatingFishSimulation(seaTurtle);
+            } else if (simulationNumber >= 40 && simulationNumber < 50) {
+                eatingSeaweedSimulation(seaTurtle);
+            } else if (simulationNumber >= 50 && simulationNumber < 60) {
+                eatingJellyfishSimulation(seaTurtle);
+            } else if (simulationNumber >= 60 && simulationNumber < 70) {
+                notEatingSimulation(seaTurtle);
+            } else if (simulationNumber >= 70 && simulationNumber < 80) {
+                sharkAttackSimulation(seaTurtle);
+            } else if (simulationNumber >= 80 && simulationNumber < 85) {
+                findingOceanStreamSimulation(seaTurtle);
+            } else if (simulationNumber >= 85 && simulationNumber < 90) {
+                eatingPlasticSimulation(seaTurtle);
+            } else if (simulationNumber >= 90 && simulationNumber < 100) {
+                layingEggsSimulation(seaTurtle);
+            }
+        }
+        System.out.println("Oh noo!!! Sea turtle is dead! Game over!");
     }
 
     private void sleepSimulation(SeaTurtle seaTurtle) {
@@ -41,7 +66,7 @@ public class LifeEventsSimulator {
         }
 
         health = health + (int) (seaTurtle.getJawDigestionCoefficient() * 4);
-        if(health > 100) {
+        if (health > 100) {
             health = 100;
         }
 
@@ -60,7 +85,7 @@ public class LifeEventsSimulator {
         }
 
         health = health + (int) (seaTurtle.getJawDigestionCoefficient() * 3);
-        if(health > 100) {
+        if (health > 100) {
             health = 100;
         }
 
@@ -79,9 +104,10 @@ public class LifeEventsSimulator {
         }
 
         health = health + (int) (seaTurtle.getJawDigestionCoefficient() * 4);
-        if(health > 100) {
+        if (health > 100) {
             health = 100;
         }
+
         seaTurtle.setStamina(stamina);
         seaTurtle.setHealth(health);
         checkStamina(seaTurtle);
@@ -93,9 +119,10 @@ public class LifeEventsSimulator {
     private void notEatingSimulation (SeaTurtle seaTurtle) {
         int health = seaTurtle.getHealth();
         health = health - 4;
-        if(health < 0) {
+        if (health < 0) {
             health = 0;
         }
+
         seaTurtle.setHealth(health);
         checkStamina(seaTurtle);
         System.out.println("Sea Turtle didn't eat the whole day. She lost 4 health points.");
@@ -104,9 +131,10 @@ public class LifeEventsSimulator {
     private void sharkAttackSimulation(SeaTurtle seaTurtle) {
         int health = seaTurtle.getHealth();
         health = health - 20;
-        if(health < 0) {
+        if (health < 0) {
             health = 0;
         }
+
         seaTurtle.setHealth(health);
         checkStamina(seaTurtle);
         System.out.println("Sea Turtle was attacked by a shark. She lost 20 health points.");
@@ -133,7 +161,7 @@ public class LifeEventsSimulator {
         }
 
         health = health - (int) (seaTurtle.getJawDigestionCoefficient() * 2);
-        if(health < 0) {
+        if (health < 0) {
             health = 0;
         }
 
@@ -152,7 +180,7 @@ public class LifeEventsSimulator {
         }
 
         health = health + 5;
-        if(health > 100) {
+        if (health > 100) {
             health = 100;
         }
 
@@ -164,14 +192,15 @@ public class LifeEventsSimulator {
 
     private boolean checkStatus(SeaTurtle seaTurtle) {
         System.out.println("hp: " + seaTurtle.getHealth() + "stamina: " + seaTurtle.getStamina());
-        if(seaTurtle.getHealth() <= 0) {
+        if (seaTurtle.getHealth() <= 0) {
             return false;
         } else {
             return true;
         }
     }
+
     private void checkStamina(SeaTurtle seaTurtle) {
-        if(seaTurtle.getStamina() <= 0) {
+        if (seaTurtle.getStamina() <= 0) {
             int health = seaTurtle.getHealth();
             health = health - 5;
             if (health < 0) {
