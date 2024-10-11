@@ -12,4 +12,7 @@ public class SeaTurtle {
     public int getHealth() {
         return this.health;
     }
+    public void setEnergy(int energy) {
+        this.energy = energy;
+    }
 }
