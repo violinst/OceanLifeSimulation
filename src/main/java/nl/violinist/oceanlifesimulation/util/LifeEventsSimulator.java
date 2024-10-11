@@ -90,7 +90,7 @@ public class LifeEventsSimulator {
 
 
 
-    private void notEating (SeaTurtle seaTurtle) {
+    private void notEatingSimulation (SeaTurtle seaTurtle) {
         int health = seaTurtle.getHealth();
         health = health - 4;
         if(health < 0) {
@@ -101,7 +101,7 @@ public class LifeEventsSimulator {
         System.out.println("Sea Turtle didn't eat the whole day. She lost 4 health points.");
     }
 
-    private void sharkAttack(SeaTurtle seaTurtle) {
+    private void sharkAttackSimulation(SeaTurtle seaTurtle) {
         int health = seaTurtle.getHealth();
         health = health - 20;
         if(health < 0) {
@@ -112,7 +112,7 @@ public class LifeEventsSimulator {
         System.out.println("Sea Turtle was attacked by a shark. She lost 20 health points.");
     }
 
-    private void findingOceanStream (SeaTurtle seaTurtle) {
+    private void findingOceanStreamSimulation (SeaTurtle seaTurtle) {
         int stamina = seaTurtle.getStamina();
         stamina = stamina + 5;
         if (stamina > 100) {
@@ -124,10 +124,43 @@ public class LifeEventsSimulator {
         System.out.println("Sea Turtle found an ocean stream to swim with! She gained 5 stamina points.");
     }
 
+    private void eatingPlasticSimulation (SeaTurtle seaTurtle) {
+        int stamina = seaTurtle.getStamina();
+        int health = seaTurtle.getHealth();
+        stamina = stamina - 4;
+        if (stamina < 0) {
+            stamina = 0;
+        }
 
+        health = health - (int) (seaTurtle.getJawDigestionCoefficient() * 2);
+        if(health < 0) {
+            health = 0;
+        }
 
+        seaTurtle.setStamina(stamina);
+        seaTurtle.setHealth(health);
+        checkStamina(seaTurtle);
+        System.out.println("Sea Turtle ate plastic. She spent 4 stamina points and lost " + seaTurtle.getJawDigestionCoefficient() * 2 + "health points.");
+    }
 
+    private void layingEggsSimulation (SeaTurtle seaTurtle) {
+        int stamina = seaTurtle.getStamina();
+        int health = seaTurtle.getHealth();
+        stamina = stamina - 10;
+        if (stamina < 0) {
+            stamina = 0;
+        }
 
+        health = health + 5;
+        if(health > 100) {
+            health = 100;
+        }
+
+        seaTurtle.setStamina(stamina);
+        seaTurtle.setHealth(health);
+        checkStamina(seaTurtle);
+        System.out.println("Sea Turtle laid eggs on the beach. She spent 10 stamina points and gained 5 health points.");
+    }
 
     private boolean checkStatus(SeaTurtle seaTurtle) {
         System.out.println("hp: " + seaTurtle.getHealth() + "stamina: " + seaTurtle.getStamina());
