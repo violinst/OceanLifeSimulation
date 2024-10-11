@@ -4,30 +4,40 @@ import nl.violinist.oceanlifesimulation.entity.SeaTurtle;
 
 public class LifeEventsSimulator {
 
-    public void startSimulation (SeaTurtle seaTurtle) {
+    public void startSimulation (SeaTurtle seaTurtle) throws InterruptedException {
 
         while (checkStatus(seaTurtle)) {
             int simulationNumber = (int) (Math.random() * 100);
             if (simulationNumber >= 0 && simulationNumber < 20) {
                 sleepSimulation(seaTurtle);
+                Thread.sleep(1000);
             } else if (simulationNumber >= 20 && simulationNumber < 30) {
                 swimSimulation(seaTurtle);
+                Thread.sleep(1000);
             } else if (simulationNumber >= 30 && simulationNumber < 40) {
                 eatingFishSimulation(seaTurtle);
+                Thread.sleep(1000);
             } else if (simulationNumber >= 40 && simulationNumber < 50) {
                 eatingSeaweedSimulation(seaTurtle);
+                Thread.sleep(1000);
             } else if (simulationNumber >= 50 && simulationNumber < 60) {
                 eatingJellyfishSimulation(seaTurtle);
+                Thread.sleep(1000);
             } else if (simulationNumber >= 60 && simulationNumber < 70) {
                 notEatingSimulation(seaTurtle);
+                Thread.sleep(1000);
             } else if (simulationNumber >= 70 && simulationNumber < 80) {
                 sharkAttackSimulation(seaTurtle);
+                Thread.sleep(1000);
             } else if (simulationNumber >= 80 && simulationNumber < 85) {
                 findingOceanStreamSimulation(seaTurtle);
+                Thread.sleep(1000);
             } else if (simulationNumber >= 85 && simulationNumber < 90) {
                 eatingPlasticSimulation(seaTurtle);
+                Thread.sleep(1000);
             } else if (simulationNumber >= 90 && simulationNumber < 100) {
                 layingEggsSimulation(seaTurtle);
+                Thread.sleep(1000);
             }
         }
         System.out.println("Oh noo!!! Sea turtle is dead! Game over!");

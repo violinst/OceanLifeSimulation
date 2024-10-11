@@ -5,7 +5,7 @@ import nl.violinist.oceanlifesimulation.util.LifeEventsSimulator;
 
 public class Main {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         SeaTurtle seaTurtle = new SeaTurtle();
         LifeEventsSimulator lifeEventsSimulator = new LifeEventsSimulator();
         lifeEventsSimulator.startSimulation(seaTurtle);
