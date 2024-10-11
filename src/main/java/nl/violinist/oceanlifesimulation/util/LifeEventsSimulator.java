@@ -73,7 +73,7 @@ public class LifeEventsSimulator {
         seaTurtle.setStamina(stamina);
         seaTurtle.setHealth(health);
         checkStamina(seaTurtle);
-        System.out.println("Sea Turtle ate a fish. She spent 7 stamina points and gained " + seaTurtle.getJawDigestionCoefficient() * 4 + "health points.");
+        System.out.println("Sea Turtle ate a fish. She spent 7 stamina points and gained " + ((int) (seaTurtle.getJawDigestionCoefficient() * 4)) + " health points.");
     }
 
     private void eatingSeaweedSimulation (SeaTurtle seaTurtle) {
@@ -92,7 +92,7 @@ public class LifeEventsSimulator {
         seaTurtle.setStamina(stamina);
         seaTurtle.setHealth(health);
         checkStamina(seaTurtle);
-        System.out.println("Sea Turtle ate some seaweed. She spent 6 stamina points and gained " + seaTurtle.getJawDigestionCoefficient() * 3 + "health points.");
+        System.out.println("Sea Turtle ate some seaweed. She spent 6 stamina points and gained " + ((int) (seaTurtle.getJawDigestionCoefficient() * 3)) + " health points.");
     }
 
     private void eatingJellyfishSimulation (SeaTurtle seaTurtle) {
@@ -111,7 +111,7 @@ public class LifeEventsSimulator {
         seaTurtle.setStamina(stamina);
         seaTurtle.setHealth(health);
         checkStamina(seaTurtle);
-        System.out.println("Sea Turtle ate a jellyfish. She spent 4 stamina points and gained " + seaTurtle.getJawDigestionCoefficient() * 4 + "health points.");
+        System.out.println("Sea Turtle ate a jellyfish. She spent 4 stamina points and gained " + ((int) (seaTurtle.getJawDigestionCoefficient() * 4)) + " health points.");
     }
 
 
@@ -168,7 +168,7 @@ public class LifeEventsSimulator {
         seaTurtle.setStamina(stamina);
         seaTurtle.setHealth(health);
         checkStamina(seaTurtle);
-        System.out.println("Sea Turtle ate plastic. She spent 4 stamina points and lost " + seaTurtle.getJawDigestionCoefficient() * 2 + "health points.");
+        System.out.println("Sea Turtle ate plastic. She spent 4 stamina points and lost " + ((int) (seaTurtle.getJawDigestionCoefficient() * 2)+ " health points."));
     }
 
     private void layingEggsSimulation (SeaTurtle seaTurtle) {
