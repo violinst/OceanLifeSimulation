@@ -15,4 +15,10 @@ public class SeaTurtle {
     public void setEnergy(int energy) {
         this.energy = energy;
     }
+    public int getEnergy() {
+        return this.energy;
+    }
+    public double getJawDigestionCoefficient() {
+        return this.jawDigestionCoefficient;
+    }
 }
