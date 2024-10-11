@@ -7,6 +7,7 @@ public class LifeEventsSimulator {
     public void startSimulation (SeaTurtle seaTurtle) {
 
     }
+
     private void sleepSimulation(SeaTurtle seaTurtle) {
         int stamina = seaTurtle.getStamina();
         stamina = stamina + 10;
@@ -14,8 +15,10 @@ public class LifeEventsSimulator {
             stamina = 100;
         }
         seaTurtle.setStamina(stamina);
-        System.out.println("Sea Turtle slept! She gained 10 stamina");
+        checkStamina(seaTurtle);
+        System.out.println("Sea Turtle slept! She gained 10 stamina.");
     }
+
     private void swimSimulation (SeaTurtle seaTurtle) {
         int stamina = seaTurtle.getStamina();
         stamina = stamina - 4;
@@ -23,8 +26,10 @@ public class LifeEventsSimulator {
             stamina = 0;
         }
         seaTurtle.setStamina(stamina);
-        System.out.println("Sea Turtle was swimming the whole day. She spent 4 stamina:");
+        checkStamina(seaTurtle);
+        System.out.println("Sea Turtle was swimming the whole day. She spent 4 stamina.");
     }
+
     private void eatingFishSimulation (SeaTurtle seaTurtle) {
         int stamina = seaTurtle.getStamina();
         int health = seaTurtle.getHealth();
@@ -39,8 +44,22 @@ public class LifeEventsSimulator {
         }
         seaTurtle.setStamina(stamina);
         seaTurtle.setHealth(health);
+        checkStamina(seaTurtle);
         System.out.println("Sea Turtle ate a fish. She spent 7 stamina and gained " + seaTurtle.getJawDigestionCoefficient() * 4 + "health.");
     }
+
+    private void notEating (SeaTurtle seaTurtle) {
+        int health = seaTurtle.getHealth();
+        health = health - 4;
+        if(health < 0) {
+            health = 0;
+        }
+        seaTurtle.setHealth(health);
+        checkStamina(seaTurtle);
+        System.out.println("Sea Turtle didn't eat the whole day. She lost 4 health point.");
+    }
+
+
 
     private boolean checkStatus(SeaTurtle seaTurtle) {
         System.out.println("hp: " + seaTurtle.getHealth() + "stamina: " + seaTurtle.getStamina());
