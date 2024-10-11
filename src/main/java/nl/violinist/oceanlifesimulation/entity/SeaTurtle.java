@@ -9,4 +9,7 @@ public class SeaTurtle {
     public void setHealth (int health) {
         this.health = health;
     }
+    public int getHealth() {
+        return this.health;
+    }
 }
