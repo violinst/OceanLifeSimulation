@@ -5,7 +5,7 @@ import nl.violinist.oceanlifesimulation.entity.SeaTurtle;
 public class LifeEventsSimulator {
 
     public void startSimulation (SeaTurtle seaTurtle) {
-        Math.random();
+
         while (checkStatus(seaTurtle)) {
             int simulationNumber = (int) Math.random() * 100;
             if (simulationNumber >= 0 && simulationNumber < 20) {
