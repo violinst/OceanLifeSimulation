@@ -4,7 +4,7 @@ public class SeaTurtle {
 
     private int health = 100;
     private int stamina = 100;
-    private final double jawDigestionCoefficient = 3.2;
+    private final double jawDigestionCoefficient = 2.2;
 
     public void setHealth(int health) {
         this.health = health;

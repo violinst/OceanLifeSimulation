@@ -4,41 +4,32 @@ import nl.violinist.oceanlifesimulation.entity.SeaTurtle;
 
 public class LifeEventsSimulator {
 
-    public void startSimulation (SeaTurtle seaTurtle) throws InterruptedException {
+    public void startSimulation(SeaTurtle seaTurtle) throws InterruptedException {
 
         while (checkStatus(seaTurtle)) {
             int simulationNumber = (int) (Math.random() * 100);
             if (simulationNumber >= 0 && simulationNumber < 20) {
                 sleepSimulation(seaTurtle);
-                Thread.sleep(1000);
             } else if (simulationNumber >= 20 && simulationNumber < 30) {
                 swimSimulation(seaTurtle);
-                Thread.sleep(1000);
             } else if (simulationNumber >= 30 && simulationNumber < 40) {
                 eatingFishSimulation(seaTurtle);
-                Thread.sleep(1000);
             } else if (simulationNumber >= 40 && simulationNumber < 50) {
                 eatingSeaweedSimulation(seaTurtle);
-                Thread.sleep(1000);
             } else if (simulationNumber >= 50 && simulationNumber < 60) {
                 eatingJellyfishSimulation(seaTurtle);
-                Thread.sleep(1000);
             } else if (simulationNumber >= 60 && simulationNumber < 70) {
                 notEatingSimulation(seaTurtle);
-                Thread.sleep(1000);
             } else if (simulationNumber >= 70 && simulationNumber < 80) {
                 sharkAttackSimulation(seaTurtle);
-                Thread.sleep(1000);
             } else if (simulationNumber >= 80 && simulationNumber < 85) {
                 findingOceanStreamSimulation(seaTurtle);
-                Thread.sleep(1000);
             } else if (simulationNumber >= 85 && simulationNumber < 90) {
                 eatingPlasticSimulation(seaTurtle);
-                Thread.sleep(1000);
             } else if (simulationNumber >= 90 && simulationNumber < 100) {
                 layingEggsSimulation(seaTurtle);
-                Thread.sleep(1000);
             }
+            Thread.sleep(1000);
         }
         System.out.println("Oh noo!!! Sea turtle is dead! Game over!");
     }
@@ -55,19 +46,19 @@ public class LifeEventsSimulator {
         System.out.println("Sea Turtle slept! She gained 10 stamina points.");
     }
 
-    private void swimSimulation (SeaTurtle seaTurtle) {
+    private void swimSimulation(SeaTurtle seaTurtle) {
         int stamina = seaTurtle.getStamina();
-        stamina = stamina - 4;
+        stamina = stamina - 6;
         if (stamina < 0) {
             stamina = 0;
         }
 
         seaTurtle.setStamina(stamina);
         checkStamina(seaTurtle);
-        System.out.println("Sea Turtle was swimming the whole day. She spent 4 stamina points.");
+        System.out.println("Sea Turtle was swimming the whole day. She spent 6 stamina points.");
     }
 
-    private void eatingFishSimulation (SeaTurtle seaTurtle) {
+    private void eatingFishSimulation(SeaTurtle seaTurtle) {
         int stamina = seaTurtle.getStamina();
         int health = seaTurtle.getHealth();
         stamina = stamina - 7;
@@ -75,7 +66,7 @@ public class LifeEventsSimulator {
             stamina = 0;
         }
 
-        health = health + (int) (seaTurtle.getJawDigestionCoefficient() * 4);
+        health = health + (int) (seaTurtle.getJawDigestionCoefficient() * 3);
         if (health > 100) {
             health = 100;
         }
@@ -83,10 +74,10 @@ public class LifeEventsSimulator {
         seaTurtle.setStamina(stamina);
         seaTurtle.setHealth(health);
         checkStamina(seaTurtle);
-        System.out.println("Sea Turtle ate a fish. She spent 7 stamina points and gained " + ((int) (seaTurtle.getJawDigestionCoefficient() * 4)) + " health points.");
+        System.out.println("Sea Turtle ate a fish. She spent 7 stamina points and gained " + ((int) (seaTurtle.getJawDigestionCoefficient() * 3)) + " health points.");
     }
 
-    private void eatingSeaweedSimulation (SeaTurtle seaTurtle) {
+    private void eatingSeaweedSimulation(SeaTurtle seaTurtle) {
         int stamina = seaTurtle.getStamina();
         int health = seaTurtle.getHealth();
         stamina = stamina - 6;
@@ -105,7 +96,7 @@ public class LifeEventsSimulator {
         System.out.println("Sea Turtle ate some seaweed. She spent 6 stamina points and gained " + ((int) (seaTurtle.getJawDigestionCoefficient() * 3)) + " health points.");
     }
 
-    private void eatingJellyfishSimulation (SeaTurtle seaTurtle) {
+    private void eatingJellyfishSimulation(SeaTurtle seaTurtle) {
         int stamina = seaTurtle.getStamina();
         int health = seaTurtle.getHealth();
         stamina = stamina - 4;
@@ -113,7 +104,7 @@ public class LifeEventsSimulator {
             stamina = 0;
         }
 
-        health = health + (int) (seaTurtle.getJawDigestionCoefficient() * 4);
+        health = health + (int) (seaTurtle.getJawDigestionCoefficient() * 2);
         if (health > 100) {
             health = 100;
         }
@@ -125,8 +116,7 @@ public class LifeEventsSimulator {
     }
 
 
-
-    private void notEatingSimulation (SeaTurtle seaTurtle) {
+    private void notEatingSimulation(SeaTurtle seaTurtle) {
         int health = seaTurtle.getHealth();
         health = health - 4;
         if (health < 0) {
@@ -150,7 +140,7 @@ public class LifeEventsSimulator {
         System.out.println("Sea Turtle was attacked by a shark. She lost 20 health points.");
     }
 
-    private void findingOceanStreamSimulation (SeaTurtle seaTurtle) {
+    private void findingOceanStreamSimulation(SeaTurtle seaTurtle) {
         int stamina = seaTurtle.getStamina();
         stamina = stamina + 5;
         if (stamina > 100) {
@@ -162,7 +152,7 @@ public class LifeEventsSimulator {
         System.out.println("Sea Turtle found an ocean stream to swim with! She gained 5 stamina points.");
     }
 
-    private void eatingPlasticSimulation (SeaTurtle seaTurtle) {
+    private void eatingPlasticSimulation(SeaTurtle seaTurtle) {
         int stamina = seaTurtle.getStamina();
         int health = seaTurtle.getHealth();
         stamina = stamina - 4;
@@ -178,10 +168,10 @@ public class LifeEventsSimulator {
         seaTurtle.setStamina(stamina);
         seaTurtle.setHealth(health);
         checkStamina(seaTurtle);
-        System.out.println("Sea Turtle ate plastic. She spent 4 stamina points and lost " + ((int) (seaTurtle.getJawDigestionCoefficient() * 2)+ " health points."));
+        System.out.println("Sea Turtle ate plastic. She spent 4 stamina points and lost " + ((int) (seaTurtle.getJawDigestionCoefficient() * 2) + " health points."));
     }
 
-    private void layingEggsSimulation (SeaTurtle seaTurtle) {
+    private void layingEggsSimulation(SeaTurtle seaTurtle) {
         int stamina = seaTurtle.getStamina();
         int health = seaTurtle.getHealth();
         stamina = stamina - 10;
@@ -219,6 +209,4 @@ public class LifeEventsSimulator {
             seaTurtle.setHealth(health);
         }
     }
-
-
 }
