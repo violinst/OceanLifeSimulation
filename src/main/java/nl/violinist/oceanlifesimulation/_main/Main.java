@@ -9,6 +9,5 @@ public class Main {
         SeaTurtle seaTurtle = new SeaTurtle();
         LifeEventsSimulator lifeEventsSimulator = new LifeEventsSimulator();
         lifeEventsSimulator.startSimulation(seaTurtle);
-
     }
 }

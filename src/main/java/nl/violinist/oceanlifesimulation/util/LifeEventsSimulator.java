@@ -10,26 +10,28 @@ public class LifeEventsSimulator {
             int simulationNumber = (int) (Math.random() * 100);
             if (simulationNumber >= 0 && simulationNumber < 20) {
                 sleepSimulation(seaTurtle);
-            } else if (simulationNumber >= 20 && simulationNumber < 30) {
-                swimSimulation(seaTurtle);
-            } else if (simulationNumber >= 30 && simulationNumber < 40) {
-                eatingFishSimulation(seaTurtle);
-            } else if (simulationNumber >= 40 && simulationNumber < 50) {
-                eatingSeaweedSimulation(seaTurtle);
-            } else if (simulationNumber >= 50 && simulationNumber < 60) {
-                eatingJellyfishSimulation(seaTurtle);
-            } else if (simulationNumber >= 60 && simulationNumber < 70) {
-                notEatingSimulation(seaTurtle);
-            } else if (simulationNumber >= 70 && simulationNumber < 80) {
-                sharkAttackSimulation(seaTurtle);
-            } else if (simulationNumber >= 80 && simulationNumber < 85) {
-                findingOceanStreamSimulation(seaTurtle);
-            } else if (simulationNumber >= 85 && simulationNumber < 90) {
-                eatingPlasticSimulation(seaTurtle);
-            } else if (simulationNumber >= 90 && simulationNumber < 100) {
-                layingEggsSimulation(seaTurtle);
+            } else {
+                if (simulationNumber >= 20 && simulationNumber < 30) {
+                    swimSimulation(seaTurtle);
+                } else if (simulationNumber >= 30 && simulationNumber < 40) {
+                    eatingFishSimulation(seaTurtle);
+                } else if (simulationNumber >= 40 && simulationNumber < 50) {
+                    eatingSeaweedSimulation(seaTurtle);
+                } else if (simulationNumber >= 50 && simulationNumber < 60) {
+                    eatingJellyfishSimulation(seaTurtle);
+                } else if (simulationNumber >= 60 && simulationNumber < 70) {
+                    notEatingSimulation(seaTurtle);
+                } else if (simulationNumber >= 70 && simulationNumber < 80) {
+                    sharkAttackSimulation(seaTurtle);
+                } else if (simulationNumber >= 80 && simulationNumber < 85) {
+                    findingOceanStreamSimulation(seaTurtle);
+                } else if (simulationNumber >= 85 && simulationNumber < 90) {
+                    eatingPlasticSimulation(seaTurtle);
+                } else if (simulationNumber >= 90 && simulationNumber < 100) {
+                    layingEggsSimulation(seaTurtle);
+                }
+                Thread.sleep(1000);
             }
-            Thread.sleep(1000);
         }
         System.out.println("Oh noo!!! Sea turtle is dead! Game over!");
     }
