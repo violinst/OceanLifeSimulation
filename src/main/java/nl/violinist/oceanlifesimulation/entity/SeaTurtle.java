@@ -11,7 +11,7 @@ public class SeaTurtle {
     }
 
     public int getHealth() {
-        return this.health;
+        return health;
     }
 
     public void setStamina(int stamina) {
@@ -19,10 +19,11 @@ public class SeaTurtle {
     }
 
     public int getStamina() {
-        return this.stamina;
+        return stamina;
     }
 
     public double getJawDigestionCoefficient() {
-        return this.jawDigestionCoefficient;
+        return jawDigestionCoefficient;
     }
+
 }
